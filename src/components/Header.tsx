@@ -14,14 +14,12 @@ export const Header = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 flex justify-between items-center h-full">
         <img src={logo.src} alt="Logo Fametro" className="w-[120px] md:w-[150px]" />
 
-        {/* Ícone de menu para mobile */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)}>
             {open ? <X size={32} className="text-white" /> : <Menu size={32} className="text-white" />}
           </button>
         </div>
 
-        {/* Menu desktop */}
         <ul className="hidden md:flex gap-8 text-white text-lg font-medium">
           {navItems.map((item, index) => (
             <li key={index}>
@@ -36,7 +34,6 @@ export const Header = () => {
         </ul>
       </div>
 
-      {/* Menu mobile dropdown */}
       {open && (
         <div className="md:hidden absolute top-[120px] w-full bg-black/90 text-white text-center py-4">
           <ul className="flex flex-col gap-4">
