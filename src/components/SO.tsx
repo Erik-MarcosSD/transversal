@@ -1,4 +1,10 @@
+'use client'
 import bg from "@/assets/images/csdv.png";  
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import {
     Accordion,
     AccordionContent,
@@ -11,13 +17,17 @@ import {
   import backend from "@/assets/gif/back.gif"
   import database from "@/assets/gif/banco_no_background.gif"
   import mobile from "@/assets/gif/mobile_no_background.gif"
+  import python from "@/assets/images/pitao.png"
+  import java from "@/assets/images/java.png"
+  import js from "@/assets/images/js.png"
+  import estrela from "@/assets/gif/estrela.gif"
   
 
 
 export const SO = () => {
     return (
-        <div className="mx-auto w-full h-screen flex items-center flex-col" style={{backgroundImage: `url(${bg.src})`, backgroundSize: "cover", backgroundPosition: "center"}} >
-            <div className="w-full py-6 px-8 items-center" >
+        <div className="mx-auto w-full h-screen flex justify-around" style={{backgroundImage: `url(${bg.src})`, backgroundSize: "cover", backgroundPosition: "center"}} >
+            <div className="py-6 px-8 items-center" >
                 <h1 className="text-3xl font-bold text-cyan-500 mb-2">
                     O que é uma Linguagem de Programação?
                 </h1>
@@ -107,8 +117,67 @@ export const SO = () => {
                         </AccordionItem>
                     </Accordion>
                 </section>
-
             </div>
+            <section className="mt-2">
+                <h1 className="text-cyan-400 text-center font-bold text-3xl py-4 px-12">
+                    Recomendação de Linguagens
+                </h1>
+
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    loop={true}
+                    autoplay={{ delay: 1500, disableOnInteraction: false }}
+                    pagination={{ clickable: true }}
+                    className="px-12  w-90 py-3 recomendations"
+                >
+                    <SwiperSlide>
+                    <div className="bg-white flex items-center justify-center flex-col py-4 rounded-4xl">
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Python</h1>
+                        <img className="w-20 inline" src={python.src} alt="Python" />
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Facilidade</h1>
+                        <div className="flex gap-2">
+                        {[...Array(5)].map((_, i) => (
+                            <img key={i} className="h-10 inline" src={estrela.src} alt="estrela" />
+                        ))}
+                        </div>
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Onde usar?</h1>
+                        <p className="font-bold text-lg">IA, automações, machine learning</p>
+                    </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                    <div className="bg-white flex items-center justify-center flex-col py-4 rounded-4xl">
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Java</h1>
+                        <img className="w-20 inline" src={java.src} alt="Java" />
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Facilidade</h1>
+                        <div className="flex gap-2">
+                        {[...Array(3)].map((_, i) => (
+                            <img key={i} className="h-10 inline" src={estrela.src} alt="estrela" />
+                        ))}
+                        </div>
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Onde usar?</h1>
+                        <p className="font-bold text-lg">Backend, mobile, sistemas corporativos</p>
+                    </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                    <div className="bg-white flex items-center justify-center flex-col py-4 rounded-4xl">
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">JavaScript</h1>
+                        <img className="w-20 inline" src={js.src} alt="JavaScript" />
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Facilidade</h1>
+                        <div className="flex gap-2">
+                        {[...Array(4)].map((_, i) => (
+                            <img key={i} className="h-10 inline" src={estrela.src} alt="estrela" />
+                        ))}
+                        </div>
+                        <h1 className="text-cyan-400 text-center font-bold text-2xl py-2">Onde usar?</h1>
+                        <p className="font-bold text-lg py-1">Web, front-end, back-end com Node</p>
+                    </div>
+                    </SwiperSlide>
+                </Swiper>
+                </section>
         </div>
     );
 };
