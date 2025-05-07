@@ -26,7 +26,7 @@ import {
 
 export const SO = () => {
     return (
-        <div className="mx-auto w-full h-screen flex justify-around" style={{backgroundImage: `url(${bg.src})`, backgroundSize: "cover", backgroundPosition: "center"}} >
+        <div className="mx-auto w-full h-full flex justify-around" style={{backgroundImage: `url(${bg.src})`, backgroundSize: "cover", backgroundPosition: "center"}} >
             <div className="py-6 px-8 items-center" >
                 <h1 className="text-3xl font-bold text-cyan-500 mb-2">
                     O que é uma Linguagem de Programação?
