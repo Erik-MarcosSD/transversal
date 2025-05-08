@@ -4,8 +4,14 @@ import dev from "@/assets/gif/dev.gif";
 import security from "@/assets/gif/seguranca.gif";
 import radar from "@/assets/gif/radar.gif";
 import bg from "@/assets/images/info.jpg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Informativo = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    })
     return (
         <div
             className="w-full min-h-screen py-12 px-6 sm:px-10"
@@ -16,26 +22,26 @@ export const Informativo = () => {
             }}
         >
             <div className="text-white">
-                <h2 className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-8 text-center sm:text-left">
+                <h2 data-aos="fade-up" className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-8 text-center sm:text-left">
                     Áreas de Atuação
                 </h2>
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <li className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
+                    <li data-aos="zoom-in" className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
                         <img src={dev.src} alt="Dev" className="w-14" />
                         <div>
                             <h3 className="font-bold text-lg">Desenvolvimento Web</h3>
                             <p className="text-sm">Front-end, Back-end e Full-stack</p>
                         </div>
                     </li>
-                    <li className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
+                    <li data-aos="zoom-in" className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
                         <img src={radar.src} alt="Infraestrutura" className="w-14" />
                         <div>
                             <h3 className="font-bold text-lg">Infraestrutura e DevOps</h3>
                             <p className="text-sm">Automação, servidores e cloud</p>
                         </div>
                     </li>
-                    <li className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
+                    <li data-aos="zoom-in" className="bg-gray-200 text-black p-4 rounded-xl flex items-center gap-4 shadow-md">
                         <img src={security.src} alt="Segurança" className="w-14" />
                         <div>
                             <h3 className="font-bold text-lg">Segurança da Informação</h3>
@@ -47,10 +53,10 @@ export const Informativo = () => {
 
             <div className="flex flex-col lg:flex-row gap-10 mt-16 text-white">
                 <div className="flex-1">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-6 text-center lg:text-left">
+                    <h2 data-aos="zoom-in-up" className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-6 text-center lg:text-left">
                         Conselhos para Iniciantes
                     </h2>
-                    <ul className="list-disc list-inside text-base sm:text-xl space-y-3">
+                    <ul data-aos="zoom-in-left" className="list-disc list-inside text-base sm:text-xl space-y-3">
                         <li><strong>Pratique com projetos reais</strong>: clone de sites, aplicativos simples</li>
                         <li><strong>Aprenda lógica de programação</strong>: é a base para qualquer linguagem</li>
                         <li><strong>Estude versionamento com Git</strong>: essencial para trabalhar em equipe</li>
@@ -60,10 +66,10 @@ export const Informativo = () => {
                 </div>
 
                 <div className="flex-1">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-6 text-center lg:text-left">
+                    <h2 data-aos="zoom-in-down" className="text-3xl sm:text-5xl font-bold text-cyan-400 mb-6 text-center lg:text-left">
                         Exemplos de projetos
                     </h2>
-                    <ul className="list-disc list-inside text-base sm:text-xl space-y-3">
+                    <ul data-aos="zoom-in-right" className="list-disc list-inside text-base sm:text-xl space-y-3">
                         <li>Calculadora de IMC</li>
                         <li>Conversor de moedas</li>
                         <li>Sistema de gerenciamento de tarefas</li>

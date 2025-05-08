@@ -22,8 +22,14 @@ import python from "@/assets/images/pitao.png";
 import java from "@/assets/images/java.png";
 import js from "@/assets/images/js.png";
 import estrela from "@/assets/gif/estrela.gif";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const SO = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    })
     return (
         <div
             className="w-full flex flex-col lg:flex-row items-center justify-around py-10 gap-10"
@@ -35,15 +41,15 @@ export const SO = () => {
         >
             {/* Lado esquerdo - texto + accordion */}
             <div className="px-4 sm:px-8 max-w-xl">
-                <h1 className="text-2xl sm:text-3xl font-bold text-cyan-500 mb-2">
+                <h1 data-aos="flip-down" className="text-2xl sm:text-3xl font-bold text-cyan-500 mb-2">
                     O que é uma Linguagem de Programação?
                 </h1>
-                <p className="text-base sm:text-xl text-white mb-6">
+                <p data-aos="zoom-in" className="text-base sm:text-xl text-white mb-6">
                     Linguagens de programação são formas de comunicação entre humanos e computadores. Elas permitem criar sistemas, aplicativos, sites, jogos e muito mais.
                 </p>
 
                 <section>
-                    <h1 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-4">
+                    <h1 data-aos="fade-right" className="text-xl sm:text-2xl font-bold text-cyan-400 mb-4">
                         Categorias de Linguagens
                     </h1>
                     <Accordion type="single" collapsible className="space-y-3">
@@ -54,7 +60,7 @@ export const SO = () => {
                             { label: "Mobile", icon: mobile, desc: "Dart (Flutter), Kotlin, Swift, Java. Linguagens para desenvolvimento de aplicativos móveis." },
                             { label: "Ciência de Dados e IA", icon: ia, desc: "Python, R, Julia. Aplicadas em análise de dados, machine learning e automações." },
                         ].map((item, i) => (
-                            <AccordionItem key={i} value={item.label.toLowerCase()} className="border-none">
+                            <AccordionItem data-aos="fade-up" key={i} value={item.label.toLowerCase()} className="border-none">
                                 <AccordionTrigger className="text-base sm:text-lg text-white font-semibold hover:no-underline focus:outline-none focus:ring-0 shadow-none [&>svg]:text-white">
                                     <div className="flex items-center gap-3">
                                         <img src={item.icon.src} className="w-8 sm:w-10" alt={item.label} />

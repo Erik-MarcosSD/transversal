@@ -9,8 +9,14 @@ import bug from "@/assets/gif/bug.gif";
 import demanda from "@/assets/gif/demanda.gif";
 import duvida from "@/assets/gif/duvida.gif";
 import lucro from "@/assets/gif/lucro.gif";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Curiosidades = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    })
     return (
         <div
             className="w-full min-h-screen py-16 px-4 sm:px-10"
@@ -81,7 +87,7 @@ export const Curiosidades = () => {
                         ],
                     },
                 ].map((card, i) => (
-                    <div
+                    <div data-aos="zoom-in"
                         key={i}
                         className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center"
                     >
